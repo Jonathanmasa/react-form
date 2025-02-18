@@ -31,24 +31,41 @@ function App() {
 
   return (
     <>
-      <h2>Lista articoli</h2>
-      <ul>
-        {tasks.map((task, i) => (
-          <li key={i}>{task}</li>
-        ))}
-      </ul>
+      <div className="d-flex justify-content-center align-items-center vh-100">
+         <div>
+              <div className="card">
+                  <div className="card-header">
+                      <h2 className='mb-4'>Lista articoli</h2>
+                  </div>
+                  <div className="card-body">
+                    <blockquote className="blockquote mb-0">
 
-      {/* Form per aggiungere un nuovo articolo */}
-      <form onSubmit={addTask}>
-        <input
-          type="text"
-          value={newTask}
-          onChange={(e) => setNewTask(e.target.value)}
-          placeholder="Inserisci un nuovo articolo"
-        />
-        <button type="submit">Aggiungi</button>
-      </form>
-    </>
+                      {/* Form per aggiungere un nuovo articolo */}
+                      <form onSubmit={addTask}>
+
+                        <input className='mb-3'
+                          type="text"
+                          value={newTask}
+                          onChange={(e) => setNewTask(e.target.value)}
+                          placeholder="Inserisci un nuovo articolo"
+                        />
+
+                        <button type="submit">Aggiungi</button>
+
+                      </form>
+                      <ul>
+
+                        {tasks.map((task, i) => (
+                          <li key={i}>{task}</li>
+                        ))}
+
+                      </ul>
+                    </blockquote>
+                  </div>
+            </div>
+         </div>
+      </div>
+   </>
   );
 }
 
